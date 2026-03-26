@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kashwah Eco Packaging — 可堆肥包装解决方案</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --forest:   #1C2416;
+      --forest2:  #151D10;
+      --forest3:  #222E1A;
+      --forest4:  #2C3A22;
+      --rule:     rgba(255,255,255,0.08);
+      --rule2:    rgba(255,255,255,0.14);
+      --sprout:   #8FAA6A;
+      --sprout2:  #A8C87A;
+      --sprout3:  #C4D8A0;
+      --leaf:     #566B38;
+      --ivory:    #EEE8D8;
+      --ivory2:   #E0D8C4;
+      --ivory3:   #D0C8B0;
+      --muted:    rgba(238,232,216,0.50);
+      --hint:     rgba(238,232,216,0.28);
+      --text:     #EEE8D8;
+    }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--forest);
+      color: var(--text);
+    }
+
+    /* ── NAV ── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.4rem 5rem;
+      background: var(--forest);
+      border-bottom: 1px solid var(--rule);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo-wrap { display: flex; flex-direction: column; line-height: 1; }
+    .logo-main {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.35rem;
+      font-weight: 300;
+      letter-spacing: 0.14em;
+      color: var(--ivory);
+      text-transform: uppercase;
+    }
+    .logo-sub {
+      font-size: 0.58rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      margin-top: 3px;
+    }
+    .nav-links { display: flex; gap: 2.8rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hint);
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--ivory); }
+    .nav-btn {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.6rem 1.6rem;
+      background: var(--sprout);
+      color: var(--forest2);
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .nav-btn:hover { background: var(--sprout2); }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 55% 45%;
+      min-height: 90vh;
+    }
+    .hero-left {
+      padding: 7rem 4rem 7rem 5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid var(--rule);
+    }
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      margin-bottom: 2.2rem;
+    }
+    .hero-label::before {
+      content: '';
+      display: inline-block;
+      width: 28px; height: 1px;
+      background: var(--sprout);
+    }
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(3.2rem, 5vw, 5.2rem);
+      line-height: 1.03;
+      letter-spacing: -0.015em;
+      color: var(--ivory);
+      margin-bottom: 1.8rem;
+    }
+    .hero-h1 em { font-style: italic; color: var(--sprout2); }
+    .hero-p {
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 420px;
+      margin-bottom: 2.8rem;
+      font-weight: 300;
+    }
+    .hero-actions { display: flex; gap: 1rem; align-items: center; }
+    .btn-solid {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      background: var(--sprout);
+      color: var(--forest2);
+      border: none;
+      border-radius: 1px;
+      cursor: pointer;
+      transition: background .2s;
+    }
+    .btn-solid:hover { background: var(--sprout2); }
+    .btn-line {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.85rem 1.8rem;
+      background: transparent;
+      color: var(--ivory);
+      border: 1px solid rgba(238,232,216,0.3);
+      border-radius: 1px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .btn-line:hover { background: var(--forest4); border-color: rgba(238,232,216,0.5); }
+    .hero-stats {
+      display: flex;
+      margin-top: 4rem;
+      border-top: 1px solid var(--rule);
+      padding-top: 2.2rem;
+    }
+    .hstat { flex: 1; }
+    .hstat + .hstat {
+      border-left: 1px solid var(--rule);
+      padding-left: 2rem;
+    }
+    .hstat-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 300;
+      color: var(--ivory);
+      line-height: 1;
+    }
+    .hstat-n sup { font-size: 1.1rem; }
+    .hstat-l {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      margin-top: 0.4rem;
+    }
+    .hero-right {
+      background: var(--forest2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: -70px; right: -70px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: var(--forest4);
+    }
+
+    /* ── SHARED ── */
+    .sec-tag {
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .sec-tag::before {
+      content: '';
+      display: inline-block;
+      width: 22px; height: 1px;
+      background: var(--sprout);
+    }
+    .sec-h {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 2.6rem;
+      color: var(--ivory);
+      line-height: 1.1;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── PRODUCTS ── */
+    .products { background: var(--forest3); padding: 7rem 5rem; }
+    .prod-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+    }
+    .prod-card {
+      background: var(--forest);
+      padding: 2.8rem 2.2rem 2.4rem;
+      transition: background .2s;
+    }
+    .prod-card:hover { background: var(--forest4); }
+    .prod-ico { margin-bottom: 1.8rem; }
+    .prod-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 1.55rem;
+      color: var(--ivory);
+      margin-bottom: 0.7rem;
+    }
+    .prod-d {
+      font-size: 0.86rem;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1.4rem;
+      font-weight: 300;
+    }
+    .prod-cert {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      border: 1px solid var(--leaf);
+      padding: 0.28rem 0.7rem;
+      border-radius: 1px;
+      display: inline-block;
+    }
+
+    /* ── CERTS ── */
+    .certs { background: var(--forest2); padding: 5rem; }
+    .certs-inner {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .certs-left .sec-tag { color: var(--sprout3); }
+    .certs-left .sec-tag::before { background: var(--sprout3); }
+    .certs-left .sec-h { color: var(--ivory); margin-bottom: 1rem; }
+    .certs-left p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: var(--hint);
+      font-weight: 300;
+    }
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+    }
+    .cert-item {
+      background: var(--forest3);
+      padding: 1.8rem 1.6rem;
+      transition: background .2s;
+    }
+    .cert-item:hover { background: var(--forest4); }
+    .cert-code {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 300;
+      color: var(--ivory);
+      margin-bottom: 0.4rem;
+    }
+    .cert-name {
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: var(--sprout);
+      letter-spacing: 0.06em;
+      margin-bottom: 0.5rem;
+    }
+    .cert-desc {
+      font-size: 0.78rem;
+      color: var(--hint);
+      line-height: 1.6;
+      font-weight: 300;
+    }
+    .data-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      margin-top: 1px;
+    }
+    .data-item {
+      background: var(--forest3);
+      padding: 1.5rem 1.6rem;
+    }
+    .data-n {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: var(--ivory);
+    }
+    .data-l {
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-top: 0.3rem;
+    }
+
+    /* ── ABOUT ── */
+    .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+    .about-img {
+      background: var(--forest2);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-img-inner {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-text {
+      padding: 6rem 5rem;
+      background: var(--forest);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-text .sec-h { margin-bottom: 1.8rem; }
+    .about-body {
+      font-size: 0.93rem;
+      line-height: 1.9;
+      color: var(--muted);
+      font-weight: 300;
+    }
+    .about-body p + p { margin-top: 1rem; }
+    .about-vals {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--rule);
+    }
+    .val-row {
+      background: var(--forest);
+      padding: 1.2rem 1.4rem;
+      display: flex;
+      align-items: baseline;
+      gap: 1.2rem;
+      transition: background .2s;
+    }
+    .val-row:hover { background: var(--forest4); }
+    .val-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      color: var(--forest4);
+      filter: brightness(2.5);
+      opacity: 0.35;
+    }
+    .val-text { font-size: 0.85rem; color: var(--ivory); font-weight: 400; }
+    .val-sub { font-size: 0.78rem; color: var(--muted); font-weight: 300; margin-top: 0.1rem; }
+
+    /* ── CONTACT ── */
+    .contact { background: var(--forest3); padding: 7rem 5rem; }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6rem;
+      align-items: start;
+    }
+    .contact-left .sec-h { margin-bottom: 1.5rem; }
+    .contact-left p {
+      font-size: 0.93rem;
+      line-height: 1.85;
+      color: var(--muted);
+      font-weight: 300;
+      margin-bottom: 2rem;
+    }
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      background: var(--rule);
+    }
+    .contact-row {
+      background: var(--forest3);
+      padding: 1rem 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .cd-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--sprout);
+      min-width: 60px;
+    }
+    .cd-val { font-size: 0.88rem; color: var(--ivory); font-weight: 300; }
+    .form-wrap {
+      background: var(--forest2);
+      border: 1px solid var(--rule2);
+      padding: 2.5rem;
+    }
+    .form-row { margin-bottom: 1.2rem; }
+    .form-row label {
+      display: block;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--hint);
+      margin-bottom: 0.5rem;
+    }
+    .form-row input,
+    .form-row select,
+    .form-row textarea {
+      width: 100%;
+      padding: 0.75rem 0.9rem;
+      background: var(--forest3);
+      border: 1px solid var(--rule2);
+      border-radius: 1px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.88rem;
+      color: var(--ivory);
+      font-weight: 300;
+      outline: none;
+      transition: border-color .2s;
+      appearance: none;
+    }
+    .form-row input::placeholder,
+    .form-row textarea::placeholder { color: var(--hint); }
+    .form-row input:focus,
+    .form-row select:focus,
+    .form-row textarea:focus { border-color: var(--sprout); }
+    .form-row select option { background: var(--forest3); color: var(--ivory); }
+    .form-row textarea { resize: vertical; min-height: 90px; }
+    .form-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-submit {
+      width: 100%;
+      padding: 0.9rem;
+      background: var(--sprout);
+      color: var(--forest2);
+      border: none;
+      border-radius: 1px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background .2s;
+      margin-top: 0.5rem;
+    }
+    .form-submit:hover { background: var(--sprout2); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--forest2);
+      padding: 2.8rem 5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--rule);
+    }
+    .footer-mid { display: flex; gap: 2.5rem; }
+    .footer-mid a {
+      text-decoration: none;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--hint);
+      transition: color .2s;
+    }
+    .footer-mid a:hover { color: var(--ivory); }
+    .footer-right {
+      font-size: 0.7rem;
+      color: var(--hint);
+      letter-spacing: 0.06em;
+      opacity: 0.6;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      nav { padding: 1.2rem 2.5rem; }
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .hero-left { padding: 4rem 2.5rem; border-right: none; border-bottom: 1px solid var(--rule); }
+      .hero-right { min-height: 380px; }
+      .products { padding: 5rem 2.5rem; }
+      .prod-grid { grid-template-columns: 1fr; }
+      .certs { padding: 5rem 2.5rem; }
+      .certs-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .cert-grid { grid-template-columns: 1fr 1fr; }
+      .about { grid-template-columns: 1fr; }
+      .about-img { min-height: 340px; }
+      .about-text { padding: 4rem 2.5rem; }
+      .contact { padding: 5rem 2.5rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+      footer { padding: 2rem 2.5rem; flex-direction: column; gap: 1.2rem; text-align: center; }
+    }
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .hero-left { padding: 3rem 1.5rem; }
+      .hero-h1 { font-size: 2.8rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-stats { flex-direction: column; gap: 1.5rem; }
+      .hstat + .hstat { border-left: none; padding-left: 0; border-top: 1px solid var(--rule); padding-top: 1.5rem; }
+      .products, .certs, .contact { padding: 4rem 1.5rem; }
+      .about-text { padding: 3rem 1.5rem; }
+      .cert-grid { grid-template-columns: 1fr; }
+      .data-row { grid-template-columns: 1fr; }
+      .form-2col { grid-template-columns: 1fr; }
+      footer { padding: 2rem 1.5rem; }
+      .footer-mid { flex-wrap: wrap; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <div class="logo-wrap">
+    <span class="logo-main">Kashwah</span>
+    <span class="logo-sub">Eco Packaging</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#products">产品</a></li>
+    <li><a href="#certs">认证</a></li>
+    <li><a href="#about">关于我们</a></li>
+    <li><a href="#contact">联系</a></li>
+  </ul>
+  <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">获取报价</button>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <span class="hero-label">可堆肥包装解决方案</span>
+    <h1 class="hero-h1">包装，<br>归于<em>自然。</em></h1>
+    <p class="hero-p">Kashwah Eco Packaging 为品牌与零售商提供经过国际认证的可堆肥包装。纸浆模具、包装袋、餐具——每一件产品，在完成使命后，都将无痕回归土地。</p>
+    <div class="hero-actions">
+      <button class="btn-solid" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">查看产品系列</button>
+      <button class="btn-line" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">索取样品</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat">
+        <div class="hstat-n">90<sup>天</sup></div>
+        <div class="hstat-l">完全堆肥周期</div>
+      </div>
+      <div class="hstat" style="padding-left:2rem">
+        <div class="hstat-n">100<sup>%</sup></div>
+        <div class="hstat-l">植物基原料</div>
+      </div>
+      <div class="hstat" style="padding-left:2rem">
+        <div class="hstat-n">3</div>
+        <div class="hstat-l">国际认证资质</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg viewBox="0 0 380 460" width="340" style="position:relative;z-index:1;max-width:100%;" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="190" cy="230" r="155" fill="#2C3A22" opacity="0.7"/>
+      <!-- Pulp mold box -->
+      <rect x="82" y="102" width="196" height="148" rx="4" fill="#3A4C2A"/>
+      <rect x="82" y="102" width="196" height="46" rx="4" fill="#2A3A1A"/>
+      <rect x="82" y="130" width="196" height="18" fill="#2A3A1A"/>
+      <text x="180" y="129" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="12" fill="#EEE8D8" letter-spacing="3">KASHWAH</text>
+      <text x="180" y="144" text-anchor="middle" font-family="Jost,sans-serif" font-size="7" fill="rgba(238,232,216,0.5)" letter-spacing="2.5">ECO PACKAGING</text>
+      <ellipse cx="128" cy="193" rx="21" ry="25" fill="#2A3A1A"/>
+      <ellipse cx="180" cy="193" rx="21" ry="25" fill="#2A3A1A"/>
+      <ellipse cx="232" cy="193" rx="21" ry="25" fill="#2A3A1A"/>
+      <ellipse cx="128" cy="229" rx="21" ry="25" fill="#2A3A1A"/>
+      <ellipse cx="180" cy="229" rx="21" ry="25" fill="#2A3A1A"/>
+      <ellipse cx="232" cy="229" rx="21" ry="25" fill="#2A3A1A"/>
+      <!-- Bag -->
+      <path d="M292 158 Q312 153 320 178 L314 318 Q312 328 300 328 L274 328 Q262 328 260 318 L254 178 Q262 153 282 158Z" fill="#3A4C2A"/>
+      <path d="M272 158 Q287 146 302 158" stroke="#566B38" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+      <rect x="260" y="178" width="54" height="28" rx="2" fill="#2A3A1A" opacity="0.8"/>
+      <text x="287" y="197" text-anchor="middle" font-family="Jost,sans-serif" font-size="6" fill="rgba(238,232,216,0.6)" letter-spacing="1.5">COMPOSTABLE</text>
+      <!-- Fork -->
+      <rect x="50" y="180" width="7" height="98" rx="3.5" fill="#3A4C2A"/>
+      <rect x="48" y="178" width="11" height="30" rx="2" fill="#3A4C2A"/>
+      <rect x="48" y="178" width="3" height="20" rx="1" fill="#2A3A1A"/>
+      <rect x="54" y="178" width="3" height="20" rx="1" fill="#2A3A1A"/>
+      <rect x="60" y="178" width="3" height="20" rx="1" fill="#2A3A1A"/>
+      <!-- Sprout leaf accents -->
+      <path d="M55 328 Q80 292 87 318 Q74 338 55 328Z" fill="#8FAA6A" opacity="0.7"/>
+      <path d="M298 336 Q326 300 333 330 Q317 350 298 336Z" fill="#8FAA6A" opacity="0.65"/>
+      <path d="M136 346 Q161 313 169 338 Q154 357 136 346Z" fill="#A8C87A" opacity="0.55"/>
+      <path d="M238 342 Q258 316 266 338 Q254 354 238 342Z" fill="#8FAA6A" opacity="0.5"/>
+      <!-- Subtle ground line -->
+      <line x1="60" y1="388" x2="320" y2="388" stroke="#566B38" stroke-width="0.5" opacity="0.4"/>
+      <text x="190" y="418" text-anchor="middle" font-family="Jost,sans-serif" font-size="7.5" fill="#566B38" letter-spacing="2.5">100% PLANT-BASED · INDUSTRIALLY COMPOSTABLE</text>
+    </svg>
+  </div>
+</section>
+
+<!-- ── PRODUCTS ── -->
+<section class="products" id="products">
+  <div class="sec-tag">产品系列</div>
+  <h2 class="sec-h">三个品类，<br>一种承诺。</h2>
+  <div class="prod-grid">
+    <div class="prod-card">
+      <div class="prod-ico">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="6" y="17" width="36" height="23" rx="3" fill="#3A4C2A"/>
+          <rect x="6" y="17" width="36" height="9" rx="3" fill="#2A3A1A"/>
+          <rect x="13" y="9" width="22" height="10" rx="3" fill="#344424"/>
+          <ellipse cx="17" cy="30" rx="5" ry="6" fill="#2A3A1A"/>
+          <ellipse cx="24" cy="30" rx="5" ry="6" fill="#2A3A1A"/>
+          <ellipse cx="31" cy="30" rx="5" ry="6" fill="#2A3A1A"/>
+        </svg>
+      </div>
+      <div class="prod-n">纸浆模具</div>
+      <p class="prod-d">以甘蔗渣、竹浆为原料，替代EPS泡沫与塑料托盘。适用于电子产品、精品礼盒、食品的定制内衬缓冲包装，可完全定制尺寸与结构。</p>
+      <span class="prod-cert">可定制尺寸与结构</span>
+    </div>
+    <div class="prod-card">
+      <div class="prod-ico">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <path d="M14 9 L34 9 L38 40 L10 40Z" fill="#3A4C2A"/>
+          <path d="M14 9 L34 9 L36 21 L12 21Z" fill="#2A3A1A"/>
+          <rect x="18" y="14" width="12" height="2" rx="1" fill="#EEE8D8" opacity="0.2"/>
+          <rect x="18" y="27" width="12" height="1.5" rx="0.8" fill="#566B38" opacity="0.5"/>
+          <rect x="19" y="31" width="10" height="1.5" rx="0.8" fill="#566B38" opacity="0.5"/>
+        </svg>
+      </div>
+      <div class="prod-n">可堆肥包装袋</div>
+      <p class="prod-d">采用 PLA 与 PBAT 共混工艺，提供透明与印刷两种形态。通过 EN 13432 工业堆肥认证，适合生鲜、烘焙及电商充气缓冲袋场景。</p>
+      <span class="prod-cert">EN 13432 认证</span>
+    </div>
+    <div class="prod-card">
+      <div class="prod-ico">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+          <rect x="8" y="19" width="32" height="21" rx="11" fill="#3A4C2A"/>
+          <rect x="15" y="14" width="18" height="7" rx="3.5" fill="#344424"/>
+          <rect x="18" y="9" width="12" height="7" rx="3" fill="#2A3A1A"/>
+          <rect x="11" y="27" width="26" height="2" rx="1" fill="#566B38" opacity="0.4"/>
+        </svg>
+      </div>
+      <div class="prod-n">可堆肥餐具</div>
+      <p class="prod-d">基于玉米淀粉与竹纤维复合材料，提供叉、勺、刀、碟全系列。耐热 90°C，适用于外卖配餐、活动餐饮及航空餐厅场景。</p>
+      <span class="prod-cert">耐热 90°C · 无塑料</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CERTIFICATIONS ── -->
+<section class="certs" id="certs">
+  <div class="certs-inner">
+    <div class="certs-left">
+      <div class="sec-tag">认证与数据</div>
+      <h2 class="sec-h">以标准<br>说话。</h2>
+      <p>每款产品均通过独立第三方认证机构审核，满足欧盟、美国及亚太主要市场的可堆肥包装法规要求。</p>
+    </div>
+    <div>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <div class="cert-code">EN 13432</div>
+          <div class="cert-name">欧盟工业堆肥</div>
+          <div class="cert-desc">12周内生物降解率≥90%，重金属及有害物质合规</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-code">ASTM D6400</div>
+          <div class="cert-name">美国工业堆肥</div>
+          <div class="cert-desc">180天内完全降解，适用北美市场合规采购</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-code">OK Compost</div>
+          <div class="cert-name">工业与家庭双认证</div>
+          <div class="cert-desc">TÜV Austria 颁发，全球市场公认权威标准</div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-code">ISO 14001</div>
+          <div class="cert-name">环境管理体系</div>
+          <div class="cert-desc">生产全程碳排放审计，供应链透明溯源</div>
+        </div>
+      </div>
+      <div class="data-row">
+        <div class="data-item">
+          <div class="data-n">90天</div>
+          <div class="data-l">堆肥降解周期</div>
+        </div>
+        <div class="data-item">
+          <div class="data-n">0</div>
+          <div class="data-l">化石原料添加</div>
+        </div>
+        <div class="data-item">
+          <div class="data-n">68%</div>
+          <div class="data-l">vs 传统塑料碳减排</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section class="about" id="about">
+  <div class="about-img">
+    <div class="about-img-inner">
+      <svg viewBox="0 0 360 480" width="320" style="max-width:100%;" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="360" height="480" fill="#151D10"/>
+        <ellipse cx="180" cy="290" rx="145" ry="165" fill="#1C2416" opacity="0.8"/>
+        <!-- Moon -->
+        <circle cx="280" cy="70" r="38" fill="#2C3A22"/>
+        <circle cx="293" cy="62" r="33" fill="#151D10"/>
+        <!-- Trees -->
+        <path d="M60 480 L60 320 L30 320 L75 240 L50 240 L90 160 L130 240 L105 240 L150 320 L120 320 L120 480Z" fill="#2C3A22"/>
+        <path d="M240 480 L240 340 L215 340 L255 265 L235 265 L270 190 L305 265 L285 265 L325 340 L295 340 L295 480Z" fill="#222E1A"/>
+        <path d="M155 480 L155 380 L138 380 L165 325 L148 325 L172 275 L196 325 L179 325 L206 380 L189 380 L189 480Z" fill="#2C3A22" opacity="0.7"/>
+        <!-- Sprout leaves glow -->
+        <ellipse cx="180" cy="200" rx="62" ry="75" fill="#2C3A22"/>
+        <ellipse cx="180" cy="186" rx="62" ry="26" fill="#1C2416"/>
+        <text x="180" y="191" text-anchor="middle" font-family="Cormorant Garamond,serif" font-size="11" fill="#EEE8D8" letter-spacing="2.5" opacity="0.9">KASHWAH</text>
+        <path d="M142 224 Q157 204 172 224 Q182 239 197 224 Q212 209 222 224" stroke="#566B38" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <!-- Ground fireflies -->
+        <circle cx="95" cy="400" r="1.5" fill="#8FAA6A" opacity="0.7"/>
+        <circle cx="260" cy="420" r="1.5" fill="#8FAA6A" opacity="0.6"/>
+        <circle cx="310" cy="390" r="1" fill="#A8C87A" opacity="0.5"/>
+        <circle cx="48" cy="360" r="1" fill="#8FAA6A" opacity="0.4"/>
+        <text x="180" y="462" text-anchor="middle" font-family="Jost,sans-serif" font-size="7.5" fill="#566B38" letter-spacing="2">RETURN TO EARTH</text>
+      </svg>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="sec-tag">关于我们</div>
+    <h2 class="sec-h">包装不应<br>是负担。</h2>
+    <div class="about-body">
+      <p>Kashwah Eco Packaging 创立于对一个问题的执念：为什么一件使用了5分钟的包装，会在土地里存在500年？</p>
+      <p>我们不相信这是不可避免的代价，而是一个设计问题。Kashwah 的每一款产品，从原料选择、工艺研发到最终认证，都以"用完之后，土地不留痕迹"为唯一标准。</p>
+      <p>我们服务于对可持续发展有真实承诺的品牌——无论您是正在替换现有包装，还是为新产品线寻找起点。</p>
+    </div>
+    <div class="about-vals">
+      <div class="val-row">
+        <span class="val-num">01</span>
+        <div>
+          <div class="val-text">植物来，植物去</div>
+          <div class="val-sub">100% 植物基原料，无化石衍生物</div>
+        </div>
+      </div>
+      <div class="val-row">
+        <span class="val-num">02</span>
+        <div>
+          <div class="val-text">以认证说话</div>
+          <div class="val-sub">独立第三方审核，拒绝自我标榜</div>
+        </div>
+      </div>
+      <div class="val-row">
+        <span class="val-num">03</span>
+        <div>
+          <div class="val-text">灵活起步</div>
+          <div class="val-sub">支持小批量打样，陪您从验证到规模化</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="sec-tag">联系我们</div>
+      <h2 class="sec-h">让我们<br>开始对话。</h2>
+      <p>无论您正在评估转换方案，还是希望了解某款产品的认证细节，我们的团队将在 48 小时内回复。</p>
+      <div class="contact-details">
+        <div class="contact-row">
+          <span class="cd-label">邮件</span>
+          <span class="cd-val">hello@kashwah.com</span>
+        </div>
+        <div class="contact-row">
+          <span class="cd-label">电话</span>
+          <span class="cd-val">+86 · 商务洽谈专线</span>
+        </div>
+        <div class="contact-row">
+          <span class="cd-label">样品</span>
+          <span class="cd-val">免费寄送 · 运费到付</span>
+        </div>
+        <div class="contact-row">
+          <span class="cd-label">MOQ</span>
+          <span class="cd-val">支持小批量打样起订</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-wrap">
+      <div class="form-2col">
+        <div class="form-row">
+          <label>姓名</label>
+          <input type="text" placeholder="您的姓名">
+        </div>
+        <div class="form-row">
+          <label>公司</label>
+          <input type="text" placeholder="公司名称">
+        </div>
+      </div>
+      <div class="form-row">
+        <label>邮箱</label>
+        <input type="email" placeholder="business@company.com">
+      </div>
+      <div class="form-row">
+        <label>感兴趣的产品</label>
+        <select>
+          <option value="">请选择...</option>
+          <option>纸浆模具</option>
+          <option>可堆肥包装袋</option>
+          <option>可堆肥餐具</option>
+          <option>全系列了解</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label>留言</label>
+        <textarea placeholder="请简述您的包装需求或希望了解的内容..."></textarea>
+      </div>
+      <button class="form-submit">发送询价 →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="logo-wrap">
+    <span class="logo-main">Kashwah</span>
+    <span class="logo-sub">Eco Packaging</span>
+  </div>
+  <div class="footer-mid">
+    <a href="#products">产品</a>
+    <a href="#certs">认证</a>
+    <a href="#about">关于我们</a>
+    <a href="#contact">联系</a>
+  </div>
+  <div class="footer-right">© 2026 Kashwah Eco Packaging</div>
+</footer>
+
+</body>
+</html>
